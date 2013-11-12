@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>RPS</title>
+
+    <link rel="stylesheet" type="text/css" href="css/application.css">
+    <script type="text/javascript" src="http://fast.fonts.net/jsapi/d7a5bfee-f067-430b-9537-a85ffd8e86f0.js"></script>
+  </head>
+  <body>
+    <h1>ROCK PAPER SCISSORS LIZARD SPOCK</h1>
+
+    <h4>Pick one!</h3>
+    <div class='choices'>
+      <button data-name='rock'>Rock</button>
+      <button data-name='paper'>Paper</button>
+      <button data-name='scissors'>Scissors</button>
+      <button data-name='lizard'>Lizard</button>
+      <button data-name='spock'>Spock</button>
+    </div>
+
+    <h2 id="result"></h2>
+
+    <h2 id="player"></h2>
+    <h3 id="computer"></h3>
+    
+    <script src='http://code.jquery.com/jquery-2.0.3.js'></script>
+    <script src='lib/RockPaperScissors.js'></script>
+    <script>
+      jQuery(document).ready(function() {
+        var player1 = new Player("Simon");
+        var player2 = new Player("Computer");
+        var game = new Game(player1, player2);
+
+        jQuery('.choices button').click(function() {
+
+          $.post('/write', { message: 'My message' }, function(response) {
+            console.log(response)
+          })
+
+          console.log("Hello");
+
+          var playerPick = player1.picks($(this).data('name'));
+          var compPick = player2.randomPick();
+
+          $("#result").html(game.result());
+
+          $("#player").html(playerPick);
+          $("#computer").html(compPick);
+        });
+      });
+    </script>
+  </body>
+</html>

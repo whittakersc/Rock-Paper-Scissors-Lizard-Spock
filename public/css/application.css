@@ -1,0 +1,26 @@
+h1 {
+    font-family:'Proxima Nova Soft W03 Bd';
+    text-align: center;
+    font-size: 55px;
+    }
+
+h2, h3 {
+	font-family:'Proxima Nova Soft W03 Reg';
+	text-align: center;
+	font-size: 24px;
+}
+
+h4 {
+    font-family:'Proxima Nova Soft W03 Bd';
+    text-align: center;
+    font-size: 36px;
+    }
+
+.choices button {
+	border-color: #000;
+    border-radius: 7px;
+    background: none;
+    margin: 30px;
+    height: 40px;
+    width: 100px;
+}
